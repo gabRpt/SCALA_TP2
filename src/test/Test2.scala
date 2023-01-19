@@ -1,30 +1,23 @@
 package test
-import currency._
-import currency.Currency._
+import currency2._
+import currency2.Currency2._
 
 
-object Test extends App {
-  println(Euro)
+object Test2 extends App {
 
-//  println(Currency.exchangeRate(Euro, Dollar))
-//  println(Currency.exchangeRate(Dollar, Euro))
-
-  println(Currency.exchangeRate(Euro)(Dollar))
-  println(Currency.exchangeRate(Dollar)(Euro))
-
-  val a1 = Account(10, Euro)
+  val a1 = Account2(10, Euro)
   println("a1: " + a1)
   assert(a1.amount == 10)
 
-  val a2 = Account(10, Dollar) + a1
+  val a2 = Account2(10, Dollar) + a1
   println("a2: " + a2)
   assert(a2.amount == 21.585)
 
-  val a3: Account = Currency.double2Locale(22.50)
+  val a3: Account2 = Currency2.double2Locale(22.50)
   println("a3: " + a3)
   assert(a3.amount == 22.50)
 
-  val a4: Account = 22.50
+  val a4: Account2 = 22.50
   println("a4: " + a4)
   assert(a4.amount == 22.50)
 
